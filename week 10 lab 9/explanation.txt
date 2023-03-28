@@ -1,0 +1,3 @@
+On alice.png we can see that changing her username did not update it before commiting the transaction.
+On alice2.png we can see that rollback reverted the uncommitted transaction which involved increasing her balance.
+On 2.png we can see that "bbrown"'s group_id did not change before commiting the transaction.
