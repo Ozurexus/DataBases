@@ -1,3 +1,4 @@
+Exercise 1
 CREATE(p:Fighter{name:'Khabib Nurmagomedov', weight:'155'}), (pp:Fighter{name:'Rafael Dos Anjos', weight:'155'}), (p)-[:beats]->(pp)
 CREATE(p:Fighter{name:'Neil Magny', weight:'170'})
 MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Rafael Dos Anjos' AND b.name = 'Neil Magny' CREATE (a)-[r:beats]->(b)
@@ -8,6 +9,7 @@ MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Jon Jones' AND b.name = 'Brandon 
 CREATE(p:Fighter{name:'Frank Mir', weight:'230'})
 MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Brandon Vera' AND b.name = 'Frank Mir' CREATE (a)-[r:beats]->(b)
 CREATE(p:Fighter{name:'Brock Lesnar', weight:'230'})
+MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Frank Mir' AND b.name = 'Brock Lesnar' CREATE (a)-[r:beats]->(b)
 CREATE(p:Fighter{name:'Kelvin Gastelum', weight:'185'})
 MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Neil Magny' AND b.name = 'Kelvin Gastelum' CREATE (a)-[r:beats]->(b)
 MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Kelvin Gastelum' AND b.name = 'Michael Bisping' CREATE (a)-[r:beats]->(b)
@@ -15,5 +17,7 @@ MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Michael Bisping' AND b.name = 'Ma
 MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Michael Bisping' AND b.name = 'Kelvin Gastelum' CREATE (a)-[r:beats]->(b)
 MATCH (a:Fighter), (b:Fighter) WHERE a.name = 'Matt Hamill' AND b.name = 'Jon Jones' CREATE (a)-[r:beats]->(b)
 
-MATCH (f:Fighter)-[:beats]->() WHERE f.weight IN ["155", "170", "185"] RETURN f.weight,collect(f.name)
-match (f)-[:beats]->()-[:beats]->(f) return f
+
+Exercise 2
+1) MATCH (f:Fighter)-[:beats]->() WHERE f.weight IN ["155", "170", "185"] RETURN f.weight,collect(f.name)
+2) MATCH (f)-[:beats]->()-[:beats]->(f) RETURN f
